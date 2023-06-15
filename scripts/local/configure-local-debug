@@ -1,0 +1,3 @@
+cmake .. -DCMAKE_BUILD_TYPE=DEBUG            \
+    -DCMAKE_CXX_FLAGS="-O2 -g -Wall -Werror" \
+    -DTESTS=ON                               \
