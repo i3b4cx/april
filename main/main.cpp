@@ -16,14 +16,29 @@ Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
  */
 
-#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_opengl.h>
+#include <SDL2/SDL_events.h>
+#include <SDL2/SDL_video.h>
 #include <iostream>
-#include <SDL2/SDL.h>
-#include <GL/gl.h>
+#include "core/Context.h"
+#include "core/Window.h"
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
-    SDL_GetNumRenderDrivers();
+    winnebago::core::Window window = winnebago::core::Window("winnebago_test_1", 0, 0, 640, 240, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    winnebago::core::Context context = winnebago::core::Context(window);
+    SDL_Event e;
+    while(e.type != SDL_QUIT)
+    {
+        SDL_PollEvent(&e);
+
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        SDL_GL_SwapWindow(window.window());
+    }
+    context.~Context();
+    window.~Window();
+    SDL_Quit();
     return 0;
 }

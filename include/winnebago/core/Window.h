@@ -16,27 +16,32 @@ Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
  */
 
-#include "core/Window.h"
+#ifndef _WINDOW_H_
+#define _WINDOW_H_
+
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_video.h>
+#include <string>
 
 namespace winnebago
 {
     namespace core
     {
-        Window::Window(std::string title, int x, int y, int width, int height, Uint32 flags)
+        class Window
         {
-            SDL_Init(SDL_INIT_EVERYTHING);
-            m_flags = flags;
-            m_window = SDL_CreateWindow(title.c_str(), x, y, width, height, m_flags);
-        }
+            public:
+            Window(std::string, int x, int y, int width, int height, Uint32 flags);
 
-        Window::~Window()
-        {
-            SDL_DestroyWindow(m_window);
-        }
+            SDL_Window *window();
 
-        SDL_Window *Window::window()
-        {
-            return m_window;
-        }
+            ~Window();
+
+            private:
+            SDL_Window *m_window;
+            Uint32 m_flags;
+        };
     }
 }
+
+#endif

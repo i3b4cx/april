@@ -16,27 +16,27 @@ Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
  */
 
+#ifndef _CONTEXT_H_
+#define _CONTEXT_H_
+
+#include <SDL2/SDL.h>
 #include "core/Window.h"
 
 namespace winnebago
 {
     namespace core
     {
-        Window::Window(std::string title, int x, int y, int width, int height, Uint32 flags)
+        class Context
         {
-            SDL_Init(SDL_INIT_EVERYTHING);
-            m_flags = flags;
-            m_window = SDL_CreateWindow(title.c_str(), x, y, width, height, m_flags);
-        }
+            public:
+            Context(Window &w);
 
-        Window::~Window()
-        {
-            SDL_DestroyWindow(m_window);
-        }
+            ~Context();
 
-        SDL_Window *Window::window()
-        {
-            return m_window;
-        }
+            private:
+            SDL_GLContext m_glContext;
+        };
     }
 }
+
+#endif

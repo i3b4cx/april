@@ -35,12 +35,13 @@ endif()
 # DEFINE INCLUDE DIRECTORIES
 target_include_directories(winnebago.o
     PRIVATE
-    {$CMAKE_SOURCE_DIR}/include/winnebago
+    ${CMAKE_SOURCE_DIR}/include/winnebago
     )
 if(TESTS)
     target_include_directories(tests
         PRIVATE
-        ${test_inc})
+        ${test_inc}
+        ${SDL2_INCLUDE_DIRS})
 endif()
 
 # DEFINE SUBDIRECTORIES
@@ -52,7 +53,7 @@ endif()
 if(TESTS)
     target_link_libraries(tests gtest)
 endif(TESTS)
-target_link_libraries(winnebago.o ${SDL2_LIBRARIES} ${GL_LIBRARIES})
+target_link_libraries(winnebago.o ${SDL2_LIBRARIES} -lGL)
 
 # INSTALL LIBRARIES (OPTIONAL)
 
