@@ -16,10 +16,14 @@ Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
  */
 
+#include <SDL2/SDL_render.h>
 #include <iostream>
+#include <SDL2/SDL.h>
+#include <GL/gl.h>
 
 int main()
 {
     std::cout << "Hello World!" << std::endl;
+    SDL_GetNumRenderDrivers();
     return 0;
 }

@@ -9,6 +9,9 @@ project(winnebago VERSION 0.1)
 set(CMAKE_CXX_STANDARD_REQUIRED 11)
 set(CMAKE_CXX_FLAGS "-O2 -g -Wall -Werror")
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(SDL2 REQUIRED sdl2)
+
 # SET PROJECT SRC/INC FILES
 set(src
     src/core/Window.cpp
@@ -32,7 +35,8 @@ endif()
 # DEFINE INCLUDE DIRECTORIES
 target_include_directories(winnebago.o
     PRIVATE
-    ${inc})
+    {$CMAKE_SOURCE_DIR}/include/winnebago
+    )
 if(TESTS)
     target_include_directories(tests
         PRIVATE
@@ -48,6 +52,7 @@ endif()
 if(TESTS)
     target_link_libraries(tests gtest)
 endif(TESTS)
+target_link_libraries(winnebago.o ${SDL2_LIBRARIES} ${GL_LIBRARIES})
 
 # INSTALL LIBRARIES (OPTIONAL)
 
