@@ -1,6 +1,6 @@
 # april #
 
-**quickstart guide**
+**quickstart guide for my custom work in progress gl2 game engine**
 
 ***->start here***
 
