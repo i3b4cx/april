@@ -5,7 +5,7 @@
 ***->[start here]()***
 ***april documentation*** | ***building, installing, linking***
 --------------------------|-------------------------------
-***[intro]()***           | ***[building from source]()***
+***[intro](#intro)***           | ***[building from source]()***
 ***[setup]()***           | ***[toolchains]()***
 ***[rendering]()***       | ***[installing april libraries]()***
 ***[ecs]()***             | ***[linking against april in other projects]()***
