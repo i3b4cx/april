@@ -1,18 +1,17 @@
 // ===============================================================================================
 /**
- *   @copyright Project - Copyright (c) 2023 Henry Purdum, Inc.
- *   @file       main/main.cpp
+ *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
+ *   @file       samples/window/main.cpp
  *   @author     Henry Purdum
- *   @date       06/01/2023
- *   @brief      A brief template file
- *   @remarks    A brief template file
+ *   @date       06/16/2023
+ *   @brief      Simple proof of concept for core window and context building.
  **/
 // ===============================================================================================
 /*
 ---------------------------------------------------------------------------------------------------
 Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
-00/00/0000  | HJP      | Initial Implementation
+06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
 #include <iostream>

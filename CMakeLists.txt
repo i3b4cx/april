@@ -1,11 +1,11 @@
 
 ###########################################
-# CMAKELISTS : WINNEBAGO PROJECT          #
+# CMAKELISTS : APRIL PROJECT              #
 ###########################################
 
 # SET PROJECT VARIABLES
 cmake_minimum_required(VERSION 3.26.0)
-project(winnebago VERSION 0.1)
+project(april VERSION 0.1)
 set(CMAKE_CXX_STANDARD_REQUIRED 11)
 set(CMAKE_CXX_FLAGS "-O2 -g -Wall -Werror")
 
@@ -14,31 +14,29 @@ pkg_check_modules(SDL2 REQUIRED sdl2)
 pkg_check_modules(OpenGL REQUIRED gl)
 
 # SET PROJECT SRC/INC FILES
-set(WINNEBAGO_SRC
+set(APRIL_SRC
     src/core/Application.cpp
     src/core/Window.cpp
     src/core/Context.cpp)
 set(test_src
     )
-set(WINNEBAGO_INC
-    ${CMAKE_SOURCE_DIR}/include/winnebago)
+set(APRIL_INC
+    ${CMAKE_SOURCE_DIR}/include/april)
 # DEFINE PROJECT OPTIONS
 option(TESTS "Build Tests" OFF)
 
 
 # DEFINE LIBRARIES
-add_library(winnebago ${WINNEBAGO_SRC})
+add_library(april ${APRIL_SRC})
 if(TESTS)
     enable_testing()
     add_executable(tests ext/googletest/googletest/src/gtest_main.cc ${test_src})
 endif()
 
-
-
 # DEFINE INCLUDE DIRECTORIES
-target_include_directories(winnebago
+target_include_directories(april
     PRIVATE
-    ${WINNEBAGO_INC}
+    ${APRIL_INC}
     ${SDL2_INCLUDE_DIRS}
     )
 if(TESTS)
@@ -57,13 +55,13 @@ endif()
 if(TESTS)
     target_link_libraries(tests gtest)
 endif(TESTS)
-target_link_libraries(winnebago ${SDL2_LIBRARIES} ${GL_LIBRARIES})
+target_link_libraries(april ${SDL2_LIBRARIES} ${GL_LIBRARIES})
 
 # DEFINE EXECUTABLES
 add_executable(window
     samples/window/main.cpp)
-target_include_directories(window PRIVATE ${WINNEBAGO_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
-target_link_libraries(window winnebago ${SDL2_LIBRARIES} )
+target_include_directories(window PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
+target_link_libraries(window april ${SDL2_LIBRARIES} )
 
 # INSTALL LIBRARIES (OPTIONAL)
 

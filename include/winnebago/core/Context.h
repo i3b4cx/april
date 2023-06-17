@@ -1,18 +1,17 @@
 // ===============================================================================================
 /**
- *   @copyright Project - Copyright (c) 2023 Henry Purdum, Inc.
- *   @file       main/main.cpp
+ *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
+ *   @file       include/winnebago/core/Context.h
  *   @author     Henry Purdum
- *   @date       06/01/2023
- *   @brief      A brief template file
- *   @remarks    A brief template file
+ *   @date       06/16/2023
+ *   @brief      Core context impl.
  **/
 // ===============================================================================================
 /*
 ---------------------------------------------------------------------------------------------------
 Date        | Author   | Description
 ---------------------------------------------------------------------------------------------------
-00/00/0000  | HJP      | Initial Implementation
+06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
 #ifndef __WINNEBAGO_CONTEXT_H__
