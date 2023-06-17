@@ -1,10 +1,10 @@
 // ===============================================================================================
 /**
  *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
- *   @file       include/april/core/Context.h
+ *   @file       include/april/graphics/RenderTarget.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      Core context impl.
+ *   @brief      Used by the renderer to determine which framebuffer to render to.
  **/
 // ===============================================================================================
 /*
@@ -14,27 +14,18 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_CONTEXT_H__
-#define __APRIL_CONTEXT_H__
-
-#include <SDL2/SDL.h>
-#include "core/Window.h"
+#ifndef __APRIL_GRAPHICS_RENDER_TARGET_H__
+#define __APRIL_GRAPHICS_RENDER_TARGET_H__
 
 namespace april
 {
-    namespace core
+    namespace graphics
     {
-        class Context
+        class RenderTarget
         {
-            public:
-            Context(Window &w);
 
-            ~Context();
-
-            private:
-            SDL_GLContext m_glContext;
         };
-    }  // namespace core
+    }  // namespace graphics
 }  // namespace april
 
-#endif  // __APRIL_CONTEXT_H__
+#endif // __APRIL_GRAPHICS_RENDER_TARGET_H__

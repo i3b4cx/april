@@ -14,8 +14,11 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_LAYER_H__
-#define __WINNEBAGO_LAYER_H__
+#ifndef __APRIL_LAYER_H__
+#define __APRIL_LAYER_H__
+
+#include <vector>
+#include "core/Scene.h"
 
 namespace april
 {
@@ -23,9 +26,21 @@ namespace april
     {
         class Layer
         {
-            
+            public:
+            Layer()
+            {}
+
+            ~Layer()
+            {}
+
+            void addScene();
+            void destroyScene();
+            void processScenes();
+
+            private:
+            std::vector<april::core::Scene> m_scenes;
         };
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __WINNEBAGO_LAYER_H__
+#endif  // __APRIL_LAYER_H__

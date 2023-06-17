@@ -14,3 +14,18 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
+#ifndef __APRIL_GRAPHICS_RENDER_IMPL_H__
+#define __APRIL_GRAPHICS_RENDER_IMPL_H__
+
+namespace april
+{
+    namespace graphics
+    {
+        class RenderImpl
+        {
+
+        };
+    }  // namespace graphics
+}  // namespace april
+
+#endif  // __APRIL_GRAPHICS_RENDER_IMPL_H__

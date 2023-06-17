@@ -14,8 +14,10 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_REGISTRY_H__
-#define __WINNEBAGO_REGISTRY_H__
+#ifndef __APRIL_REGISTRY_H__
+#define __APRIL_REGISTRY_H__
+
+#include <vector>
 
 namespace april
 {
@@ -23,9 +25,43 @@ namespace april
     {
         class Registry
         {
+            public:
+            Registry()
+            {}
+
+            ~Registry()
+            {}
             
+            // HJP: going to need to add on ObjectID type for readability.
+            template<typename T>
+            static void add(int id, Registry &reg)
+            {
+                // HJP: this requires a templatable object pool management system.
+            }
+
+            template<typename T>
+            static void remove(int id, Registry &reg)
+            {
+                // HJP: this requires a templatable object pool management system.
+            }
+
+            template<typename T>
+            static void getOrInsert(int id, Registry &reg)
+            {
+                // HJP: this requires a templatable object pool management system.
+            }
+
+            template<typename T>
+            static void createEntity();
+
+            template<typename T>
+            static void destroyEntity();
+
+            private:
+            // asset reference table
+            // templated map of object type -> corresponding object pool
         };
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __WINNEBAGO_REGISTRY_H__
+#endif  // __APRIL_REGISTRY_H__

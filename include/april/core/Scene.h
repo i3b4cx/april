@@ -14,8 +14,11 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_SCENE_H__
-#define __WINNEBAGO_SCENE_H__
+#ifndef __APRIL_SCENE_H__
+#define __APRIL_SCENE_H__
+
+#include "core/Registry.h"
+#include "core/Renderer.h"
 
 namespace april
 {
@@ -23,9 +26,21 @@ namespace april
     {
         class Scene
         {
-            
+            public:
+            Scene()
+            {}
+
+            ~Scene()
+            {}
+
+            void update();
+            void render();
+
+            private:
+            april::core::Registry m_registry;
+            april::core::Renderer m_renderer;
         };
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __WINNEBAGO_SCENE_H__
+#endif  // __APRIL_SCENE_H__

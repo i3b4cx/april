@@ -14,3 +14,21 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
+#ifndef __APRIL_GRAPHICS_API_GL2_H__
+#define __APRIL_GRAPHICS_API_GL2_H__
+
+namespace april
+{
+    namespace graphics
+    {
+        namespace api
+        {
+            class gl2
+            {
+
+            };
+        }  // namespace api
+    }  // namespace graphics
+}  // namespace april
+
+#endif  // __APRIL_GRAPHICS_API_GL2_H__

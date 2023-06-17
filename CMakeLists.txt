@@ -15,9 +15,66 @@ pkg_check_modules(OpenGL REQUIRED gl)
 
 # SET PROJECT SRC/INC FILES
 set(APRIL_SRC
+    src/components/Animate.cpp
+    src/components/Audio.cpp
+    src/components/Input.cpp
+    src/components/Message.cpp
+    src/components/Render.cpp
+    
     src/core/Application.cpp
+    src/core/Context.cpp
+    src/core/Layer.cpp
+    src/core/Registry.cpp
+    src/core/Renderer.cpp
+    src/core/Scene.cpp
     src/core/Window.cpp
-    src/core/Context.cpp)
+    src/ecs/Component.cpp
+    src/ecs/Entity.cpp
+    src/ecs/System.cpp
+
+    src/graphics/api/gl2.cpp
+    src/graphics/RenderImpl.cpp
+    src/graphics/RenderStrategy.cpp
+    src/graphics/RenderTarget.cpp
+    src/graphics/RendererFactory.cpp
+    
+    src/network/Client.cpp
+    src/network/Protocol.cpp
+    src/network/Server.cpp
+    src/network/Socket.cpp
+
+    src/scenegraph/description/Camera.cpp
+    src/scenegraph/description/DirectionalLight.cpp
+    src/scenegraph/description/FlashLight.cpp
+    src/scenegraph/description/Material.cpp
+    src/scenegraph/description/Model.cpp
+    src/scenegraph/description/PointLight.cpp
+    src/scenegraph/description/Quad.cpp
+    src/scenegraph/description/SpotLight.cpp
+    src/scenegraph/description/Text.cpp
+    src/scenegraph/description/Texture.cpp
+    src/scenegraph/Camera.cpp
+    src/scenegraph/DirectionalLight.cpp
+    src/scenegraph/FlashLight.cpp
+    src/scenegraph/Material.cpp
+    src/scenegraph/Model.cpp
+    src/scenegraph/PointLight.cpp
+    src/scenegraph/Quad.cpp
+    src/scenegraph/SpotLight.cpp
+    src/scenegraph/Text.cpp
+    src/scenegraph/Texture.cpp
+
+    src/shaders/Basic.cpp
+    src/shaders/BlinnPhong.cpp
+    src/shaders/Phong.cpp
+    src/shaders/UI.cpp
+
+    src/systems/AnimationSystem.cpp
+    src/systems/AudioSystem.cpp
+    src/systems/InputSystem.cpp
+    src/systems/MessageSystem.cpp
+    src/systems/RenderSystem.cpp
+    )
 set(test_src
     )
 set(APRIL_INC

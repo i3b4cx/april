@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_APPLICATION_H__
-#define __WINNEBAGO_APPLICATION_H__
+#ifndef __APRIL_APPLICATION_H__
+#define __APRIL_APPLICATION_H__
 
 #include "SDL_video.h"
 #include "SDL_events.h"
@@ -59,4 +59,4 @@ namespace april
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __WINNEBAGO_APPLICATION_H__
+#endif  // __APRIL_APPLICATION_H__
