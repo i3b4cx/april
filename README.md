@@ -3,16 +3,16 @@
 **quickstart guide for my custom work in progress gl2 game engine**
 
 ***->start here***
-april documentation | building, installing, linking
---------------------|-------------------------------
-*[intro]()          | *[building from source]()
-*[setup]()          | *[toolchains]()
-*[rendering]()      | *[installing april libraries]()
-*[ecs]()            | *[linking against april in other projects]()
-*[network]()        |
-*[audio]()          |
-*[parsing]()        |
-*[testing]()        |
+***april documentation*** | ***building, installing, linking***
+--------------------------|-------------------------------
+***[intro]()***           | ***[building from source]()***
+***[setup]()***           | ***[toolchains]()***
+***[rendering]()***       | ***[installing april libraries]()***
+***[ecs]()***             | ***[linking against april in other projects]()***
+***[network]()***         |
+***[audio]()***           |
+***[parsing]()***         |
+***[testing]()***         |
 
 ## grabing the codebase and its submodules ##
 ```bash
