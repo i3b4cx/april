@@ -1,6 +1,6 @@
 // ===============================================================================================
 /**
- *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
+ *   @copyright  April - Copyright (c) 2023 Henry James Purdum
  *   @file       include/april/scenegraph/description/Texture.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
