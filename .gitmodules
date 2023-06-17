@@ -1,0 +1,12 @@
+[submodule "ext/googletest"]
+	path = ext/googletest
+	url = https://github.com/google/googletest
+[submodule "ext/glm"]
+	path = ext/glm
+	url = https://github.com/g-truc/glm
+[submodule "ext/assimp"]
+	path = ext/assimp
+	url = https://github.com/assimp/assimp
+[submodule "ext/stb"]
+	path = ext/stb
+	url = https://github.com/nothings/stb
