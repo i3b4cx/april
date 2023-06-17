@@ -1,6 +1,4 @@
 # april #
-
-**quickstart guide for my custom work in progress gl2 game engine**
 ***april documentation***       | ***building, installing, linking***
 --------------------------------|-------------------------------
 ***[intro](#intro)***           | ***[building from source](#building-from-source)***
