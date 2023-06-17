@@ -2,17 +2,17 @@
 
 **quickstart guide for my custom work in progress gl2 game engine**
 
-***->[start here]()***
-***april documentation*** | ***building, installing, linking***
---------------------------|-------------------------------
-***[intro](#intro)***           | ***[building from source]()***
-***[setup]()***           | ***[toolchains]()***
-***[rendering]()***       | ***[installing april libraries]()***
-***[ecs]()***             | ***[linking against april in other projects]()***
-***[network]()***         |
-***[audio]()***           |
-***[parsing]()***         |
-***[testing]()***         |
+***->[start here](#building-from-source)***
+***april documentation***       | ***building, installing, linking***
+--------------------------------|-------------------------------
+***[intro](#intro)***           | ***[building from source](#building-from-source)***
+***[setup](#setup)***           | ***[toolchains](#toolchains)***
+***[rendering](#rendering)***   | ***[installing april libraries](#installing-april-libraries)***
+***[ecs](ecs)***                | ***[linking against april](#linking-against-april)***
+***[networking](networking)***  |
+***[audio](audio)***            |
+***[parsing](parsing)***        |
+***[testing](testing)***        |
 
 
 ## intro ##
@@ -23,7 +23,7 @@
 
 ## ecs ##
 
-## network ##
+## networking ##
 
 ## audio ##
 
@@ -60,7 +60,7 @@ simply configure new toolchains with cmake; a mingw-w64 toolchain has already be
 *tbd*
 ```
 
-## linking against april in other projects ##
+## linking against april ##
 ### building with april ###
 ```bash
 *tbd*
