@@ -1,10 +1,10 @@
 // ===============================================================================================
 /**
  *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
- *   @file       samples/window/main.cpp
+ *   @file       include/april/core/Window.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      Simple proof of concept for core window and context building.
+ *   @brief      Core window impl.
  **/
 // ===============================================================================================
 /*
@@ -14,23 +14,31 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#include <iostream>
-#include <exception>
-#include "core/Application.h"
+#ifndef __WINNEBAGO_WINDOW_H__
+#define __WINNEBAGO_WINDOW_H__
 
-int main()
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_video.h>
+#include <string>
+
+namespace april
 {
-    using Application = april::core::Application;
-    try
+    namespace core
     {
-        Application window_app;
-        window_app.createWindow();
-        window_app.createContext();
-        window_app.run();
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    return 0;
-}
+        class Window
+        {
+            public:
+            Window(std::string name, int x, int y, int width, int height, Uint32 flags);
+
+            SDL_Window *window();
+
+            ~Window();
+
+            private:
+            SDL_Window *m_window;
+        };
+    }  // namespace core
+}  // namespace april
+
+#endif  // __WINNEBAGO_WINDOW_H__

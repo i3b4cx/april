@@ -1,7 +1,7 @@
 #include "core/Application.h"
 #include "SDL_video.h"
 
-namespace winnebago
+namespace april
 {
     namespace core
     {
@@ -118,4 +118,4 @@ namespace winnebago
             SDL_Quit();
         }   
     }  // namespace core
-}  // namespace winnebago
+}  // namespace april

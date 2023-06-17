@@ -1,10 +1,10 @@
 // ===============================================================================================
 /**
  *   @copyright  Project - Copyright (c) 2023 Henry James Purdum
- *   @file       samples/window/main.cpp
+ *   @file       include/april/core/Context.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      Simple proof of concept for core window and context building.
+ *   @brief      Core context impl.
  **/
 // ===============================================================================================
 /*
@@ -14,23 +14,27 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#include <iostream>
-#include <exception>
-#include "core/Application.h"
+#ifndef __WINNEBAGO_CONTEXT_H__
+#define __WINNEBAGO_CONTEXT_H__
 
-int main()
+#include <SDL2/SDL.h>
+#include "core/Window.h"
+
+namespace april
 {
-    using Application = april::core::Application;
-    try
+    namespace core
     {
-        Application window_app;
-        window_app.createWindow();
-        window_app.createContext();
-        window_app.run();
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    return 0;
-}
+        class Context
+        {
+            public:
+            Context(Window &w);
+
+            ~Context();
+
+            private:
+            SDL_GLContext m_glContext;
+        };
+    }  // namespace core
+}  // namespace april
+
+#endif  // __WINNEBAGO_CONTEXT_H__

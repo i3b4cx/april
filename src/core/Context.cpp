@@ -1,7 +1,7 @@
 #include "core/Context.h"
 #include <SDL2/SDL_video.h>
 
-namespace winnebago
+namespace april
 {
     namespace core
     {
@@ -25,4 +25,4 @@ namespace winnebago
             SDL_GL_DeleteContext(m_glContext);
         }
     }  // namespace core
-}  // namespace winnebago
+}  // namespace april

@@ -1,6 +1,6 @@
 #include "core/Window.h"
 
-namespace winnebago
+namespace april
 {
     namespace core
     {
@@ -19,4 +19,4 @@ namespace winnebago
             return m_window;
         }
     }  // namespace core
-}  // namespace winnebago
+}  // namespace april
