@@ -15,27 +15,18 @@ Date        | Author   | Description
 00/00/0000  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_CONTEXT_H__
-#define __WINNEBAGO_CONTEXT_H__
-
-#include <SDL2/SDL.h>
-#include "core/Window.h"
+#ifndef __WINNEBAGO_SCENE_H__
+#define __WINNEBAGO_SCENE_H__
 
 namespace winnebago
 {
     namespace core
     {
-        class Context
+        class Scene
         {
-            public:
-            Context(Window &w);
-
-            ~Context();
-
-            private:
-            SDL_GLContext m_glContext;
+            
         };
-    }
-}
+    }  // namespace core
+}  // namespace winnebago
 
-#endif  // __WINNEBAGO_CONTEXT_H__
+#endif  // __WINNEBAGO_SCENE_H__

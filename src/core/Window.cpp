@@ -15,7 +15,6 @@ Date        | Author   | Description
 00/00/0000  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-
 #include "core/Window.h"
 
 namespace winnebago
@@ -24,9 +23,7 @@ namespace winnebago
     {
         Window::Window(std::string title, int x, int y, int width, int height, Uint32 flags)
         {
-            SDL_Init(SDL_INIT_EVERYTHING);
-            m_flags = flags;
-            m_window = SDL_CreateWindow(title.c_str(), x, y, width, height, m_flags);
+            m_window = SDL_CreateWindow(title.c_str(), x, y, width, height, flags);
         }
 
         Window::~Window()
@@ -38,5 +35,5 @@ namespace winnebago
         {
             return m_window;
         }
-    }
-}
+    }  // namespace core
+}  // namespace winnebago

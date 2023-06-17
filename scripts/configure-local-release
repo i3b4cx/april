@@ -1,4 +1,16 @@
-cmake .. -DCMAKE_BUILD_TYPE=RELEASE          \
-    -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"     \
-    -DCMAKE_CXX_FLAGS="-O2 -g -Wall -Werror" \
-    -DTESTS=OFF
+#!/bin/bash
+
+if [ "$1" == "mingw-w64" ]; then
+    cmake ..                                                            \
+        -DCMAKE_BUILD_TYPE="RELEASE"                                    \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"                            \
+        -DCMAKE_TOOLCHAIN_FILE="../toolchain/mingw-w64-toolchain.cmake" \
+        -DCMAKE_CXX_FLAGS="-O2 -Werror"                                 \
+        -DTESTS="OFF"
+else
+    cmake ..                                                            \
+        -DCMAKE_BUILD_TYPE="RELEASE"                                    \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"                            \
+        -DCMAKE_CXX_FLAGS="-O2 -Werror"                                 \
+        -DTESTS="OFF"
+fi

@@ -15,9 +15,8 @@ Date        | Author   | Description
 00/00/0000  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-
-#ifndef _WINDOW_H_
-#define _WINDOW_H_
+#ifndef __WINNEBAGO_WINDOW_H__
+#define __WINNEBAGO_WINDOW_H__
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_stdinc.h>
@@ -31,7 +30,7 @@ namespace winnebago
         class Window
         {
             public:
-            Window(std::string, int x, int y, int width, int height, Uint32 flags);
+            Window(std::string name, int x, int y, int width, int height, Uint32 flags);
 
             SDL_Window *window();
 
@@ -39,9 +38,8 @@ namespace winnebago
 
             private:
             SDL_Window *m_window;
-            Uint32 m_flags;
         };
     }
 }
 
-#endif
+#endif  // __WINNEBAGO_WINDOW_H__

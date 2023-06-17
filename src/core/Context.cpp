@@ -15,7 +15,6 @@ Date        | Author   | Description
 00/00/0000  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-
 #include "core/Context.h"
 #include <SDL2/SDL_video.h>
 
@@ -42,5 +41,5 @@ namespace winnebago
         {
             SDL_GL_DeleteContext(m_glContext);
         }
-    }
-}
+    }  // namespace core
+}  // namespace winnebago

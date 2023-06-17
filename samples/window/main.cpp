@@ -15,27 +15,23 @@ Date        | Author   | Description
 00/00/0000  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __WINNEBAGO_CONTEXT_H__
-#define __WINNEBAGO_CONTEXT_H__
+#include <iostream>
+#include <exception>
+#include "core/Application.h"
 
-#include <SDL2/SDL.h>
-#include "core/Window.h"
-
-namespace winnebago
+int main()
 {
-    namespace core
+    using Application = winnebago::core::Application;
+    try
     {
-        class Context
-        {
-            public:
-            Context(Window &w);
-
-            ~Context();
-
-            private:
-            SDL_GLContext m_glContext;
-        };
+        Application window_app;
+        window_app.createWindow();
+        window_app.createContext();
+        window_app.run();
     }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
 }
-
-#endif  // __WINNEBAGO_CONTEXT_H__
