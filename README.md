@@ -1,5 +1,5 @@
 # april
-custom gl2 graphics engine
+homemade game engine using gl2
 
 ```bash
 mkdir build && cd build
