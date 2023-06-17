@@ -2,7 +2,7 @@
 
 **quickstart guide for my custom work in progress gl2 game engine**
 
-***->start here***
+***->[start here]()***
 ***april documentation*** | ***building, installing, linking***
 --------------------------|-------------------------------
 ***[intro]()***           | ***[building from source]()***
