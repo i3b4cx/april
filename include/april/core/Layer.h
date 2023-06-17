@@ -17,7 +17,7 @@ Date        | Author   | Description
 #ifndef __WINNEBAGO_LAYER_H__
 #define __WINNEBAGO_LAYER_H__
 
-namespace winnebago
+namespace april
 {
     namespace core
     {

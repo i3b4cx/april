@@ -17,7 +17,7 @@ Date        | Author   | Description
 #ifndef __WINNEBAGO_REGISTRY_H__
 #define __WINNEBAGO_REGISTRY_H__
 
-namespace winnebago
+namespace april
 {
     namespace core
     {

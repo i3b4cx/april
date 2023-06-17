@@ -17,7 +17,7 @@ Date        | Author   | Description
 #ifndef __WINNEBAGO_SCENE_H__
 #define __WINNEBAGO_SCENE_H__
 
-namespace winnebago
+namespace april
 {
     namespace core
     {
