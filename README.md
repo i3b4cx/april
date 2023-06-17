@@ -8,11 +8,11 @@
 ***[intro](#intro)***           | ***[building from source](#building-from-source)***
 ***[setup](#setup)***           | ***[toolchains](#toolchains)***
 ***[rendering](#rendering)***   | ***[installing april libraries](#installing-april-libraries)***
-***[ecs](ecs)***                | ***[linking against april](#linking-against-april)***
-***[networking](networking)***  |
-***[audio](audio)***            |
-***[parsing](parsing)***        |
-***[testing](testing)***        |
+***[ecs](#ecs)***                | ***[linking against april](#linking-against-april)***
+***[networking](#networking)***  |
+***[audio](#audio)***            |
+***[parsing](#parsing)***        |
+***[testing](#testing)***        |
 
 
 ## intro ##
