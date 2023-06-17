@@ -3,12 +3,19 @@
 ```*->start here*```
 
 -[intro]()
+
 -[setup]()
+
 -[rendering]()
+
 -[ecs]()
+
 -[network]()
+
 -[audio]()
+
 -[parsing]()
+
 -[testing]()
 
 -[building from source]()
