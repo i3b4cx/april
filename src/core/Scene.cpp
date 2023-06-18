@@ -29,7 +29,7 @@ namespace april
 
         void Scene::update()
         {
-            for (auto s : m_systems)
+            for (std::shared_ptr<ecs::System> s : m_systems)
             {
                 s->visit();
             }

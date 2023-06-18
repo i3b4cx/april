@@ -122,10 +122,10 @@ add_executable(window
 target_include_directories(window PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
 target_link_libraries(window april ${SDL2_LIBRARIES} )
 
-add_executable(layer
-    samples/layer/main.cpp)
-target_include_directories(layer PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
-target_link_libraries(layer april ${SDL2_LIBRARIES} )
+add_executable(layer-scene-system
+    samples/layer-scene-system/main.cpp)
+target_include_directories(layer-scene-system PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
+target_link_libraries(layer-scene-system april ${SDL2_LIBRARIES} )
 
 # INSTALL LIBRARIES (OPTIONAL)
 
