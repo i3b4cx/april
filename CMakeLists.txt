@@ -140,6 +140,11 @@ add_executable(layer-scene-system
 target_include_directories(layer-scene-system PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
 target_link_libraries(layer-scene-system april ${SDL2_LIBRARIES} )
 
+add_executable(basic-ecs-registry
+    samples/basic-ecs-registry/main.cpp)
+target_include_directories(basic-ecs-registry PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
+target_link_libraries(basic-ecs-registry april ${SDL2_LIBRARIES} )
+
 # INSTALL LIBRARIES (OPTIONAL)
 
 

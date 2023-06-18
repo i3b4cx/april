@@ -24,7 +24,9 @@ Date        | Author   | Description
 #include "ecs/Entity.h"
 #include "ecs/Enums.h"
 #include "ecs/System.h"
+#include "util/Exception.h"
 #include <exception>
+#include <iostream>
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -50,9 +52,9 @@ namespace april
             
             // HJP: going to need to add on ObjectID type for readability.
             template<typename T>
-            static void add(Registry &reg)
+            static ID add(Registry &reg)
             {
-                reg.add<T>();
+                return reg.add<T>();
             }
 
             template<typename T>
@@ -75,33 +77,51 @@ namespace april
 
             private:
             template<typename T>
-            void add()
+            ID add()
             {
                 // HJP: create components and object derivative types in our scene.
                 // create our typed object
-                T object;
                 // typed objects will inheirit from one of the ecs classes and will all implement this ecs() function
                 // this will tell us what kind of object we are dealing with.
+                T object;
                 switch(object.ecs())
                 {
                     case ecs::enums::ENTITY:
-                        createEntity();
+                        return m_entities.create();
                         break;
                     case ecs::enums::COMPONENT:
-                        createComponent();
+                        return m_components.create();
                         break;
                     case ecs::enums::SYSTEM:
-                        createSystem();
+                        return m_systems.create();
                         break;
                     default:
-                        throw std::exception();
+                        char *msg = (char *)"ERROR: tried to create template object with invalid ecs enum.";
+                        throw util::Exception(msg);
                 }
+                return object.id();
             }
 
             template<typename T>
             void remove(int id)
             {
                 // HJP: remove for components and object derivative types in our scene.
+                T object;
+                switch(object.ecs())
+                {
+                    case ecs::enums::ENTITY:
+                        m_entities.remove(id);
+                        break;
+                    case ecs::enums::COMPONENT:
+                        m_components.remove(id);
+                        break;
+                    case ecs::enums::SYSTEM:
+                        m_systems.remove(id);
+                        break;
+                    default:
+                        char *msg = (char *)"ERROR: tried to remove template object with invalid ecs enum.";
+                        throw util::Exception(msg);
+                }
             }
 
             template<typename T>
@@ -151,12 +171,9 @@ namespace april
 
             private:
             // map: asset reference id -> asset object pools
-            ID m_entityId;
-            ID m_componentId;
-            ID m_systemId;
-            std::unordered_map<ID, ObjectPool<ecs::Entity>> m_entities;
-            std::unordered_map<ID, ObjectPool<ecs::Component>> m_components;
-            std::unordered_map<ID, ObjectPool<ecs::System>> m_systems;
+            ObjectPool<ecs::Entity> m_entities;
+            ObjectPool<ecs::Component> m_components;
+            ObjectPool<ecs::System> m_systems;
         };
     }  // namespace core
 }  // namespace winnebago

@@ -18,6 +18,7 @@ Date        | Author   | Description
 #define __APRIL_CORE_OBJECT_H__
 
 #include "core/ID.h"
+#include "ecs/Enums.h"
 namespace april
 {
     namespace core
@@ -28,12 +29,19 @@ namespace april
             Object();
             ~Object();
 
+            void init();
             ID id();
             bool alive();
+            void kill();
+            ecs::enums::Enums ecs();
 
             private:
-            ID m_id;
+            static ID idIndex;
             bool m_alive;
+
+            protected:
+            ID m_id;
+            ecs::enums::Enums m_type;
         };
     }  // namespace core
 }  // namespace april

@@ -35,14 +35,15 @@ namespace april
             ~Scene();
             
             ID id();
+            Registry &registry();
             
             void update();
 
             private:
             static ID idIndex;
             ID m_id;
-            april::core::Registry m_registry;
-            april::core::Renderer m_renderer;
+            Registry m_registry;
+            Renderer m_renderer;
         };
     }  // namespace core
 }  // namespace winnebago

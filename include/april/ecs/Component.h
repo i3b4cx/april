@@ -17,7 +17,9 @@ Date        | Author   | Description
 #ifndef __APRIL_ECS_COMPONENT_H__
 #define __APRIL_ECS_COMPONENT_H__
 
+#include "core/ID.h"
 #include "core/Object.h"
+#include "ecs/Enums.h"
 
 namespace april
 {
@@ -28,6 +30,9 @@ namespace april
             public:
             Component();
             ~Component();
+
+            private:
+            static core::ID componentId;
         };
     }  // namespace ecs
 }  // namespace april

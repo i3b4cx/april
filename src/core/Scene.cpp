@@ -1,5 +1,6 @@
 #include "core/Scene.h"
 #include "core/ID.h"
+#include "core/Registry.h"
 #include "ecs/System.h"
 #include <memory>
 
@@ -26,6 +27,10 @@ namespace april
             return m_id;
         }
 
+        Registry &Scene::registry()
+        {
+            return m_registry;
+        }
 
         void Scene::update()
         {

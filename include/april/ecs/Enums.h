@@ -27,7 +27,8 @@ namespace april
             {
                 ENTITY,
                 COMPONENT,
-                SYSTEM
+                SYSTEM,
+                OBJECT
             };
         }
     }  // namespace ecs

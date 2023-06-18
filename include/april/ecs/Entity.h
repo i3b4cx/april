@@ -29,6 +29,9 @@ namespace april
             public:
             Entity();
             ~Entity();
+
+            private:
+            static core::ID entityId;
         };
     }  // namespace ecs
 }  // namespace april

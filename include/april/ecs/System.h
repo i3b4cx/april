@@ -17,6 +17,7 @@ Date        | Author   | Description
 #ifndef __APRIL_ECS_SYSTEM_H__
 #define __APRIL_ECS_SYSTEM_H__
 
+#include "core/ID.h"
 #include "core/Object.h"
 
 namespace april
@@ -28,6 +29,9 @@ namespace april
             public:
             System();
             ~System();
+
+            private:
+            static core::ID systemId;
         };
     }  // namespace ecs
 }  // namespace april
