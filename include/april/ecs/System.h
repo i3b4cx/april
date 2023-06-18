@@ -14,3 +14,25 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
+#ifndef __APRIL_ECS_SYSTEM_H__
+#define __APRIL_ECS_SYSTEM_H__
+
+namespace april
+{
+    namespace ecs
+    {
+        class System
+        {
+            public:
+            System();
+            ~System();
+
+            virtual void visit();
+            
+            private:
+
+        };
+    }  // namespace ecs
+}  // namespace april
+
+#endif  // __APRIL_ECS_SYSTEM_H__

@@ -1,10 +1,10 @@
 // ===============================================================================================
 /**
  *   @copyright  April - Copyright (c) 2023 Henry James Purdum
- *   @file       include/april/core/Scene.h
+ *   @file       include/april/core/ID.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      Core scene impl.
+ *   @brief      Core id impl.
  **/
 // ===============================================================================================
 /*
@@ -14,36 +14,17 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_SCENE_H__
-#define __APRIL_SCENE_H__
+#ifndef __APRIL_ID_H__
+#define __APRIL_ID_H__
 
-#include "core/ID.h"
-#include "core/Registry.h"
-#include "core/Renderer.h"
-#include "ecs/System.h"
+#include <cstdint>
 
 namespace april
 {
     namespace core
     {
-        class Scene
-        {
-            public:
-            Scene();
-
-            ~Scene();
-            
-            ID id();
-            void update();
-
-            private:
-            static ID idIndex;
-            ID m_id;
-            std::vector<ecs::System> m_systems;
-            april::core::Registry m_registry;
-            april::core::Renderer m_renderer;
-        };
+        using ID = uint32_t;
     }  // namespace core
-}  // namespace winnebago
+}  // namespace april
 
-#endif  // __APRIL_SCENE_H__
+#endif  // __APRIL_ID_H__

@@ -19,8 +19,11 @@ Date        | Author   | Description
 
 #include "SDL_video.h"
 #include "SDL_events.h"
+#include "core/Layer.h"
 #include "core/Window.h"
 #include "core/Context.h"
+#include "core/ID.h"
+#include <vector>
 
 namespace april
 {
@@ -38,15 +41,18 @@ namespace april
             const Application &height(int height);
             const Application &sdlFlags(Uint32 flags);
             const Application &windowFlags(Uint32 flags);
+
             void init();
             void createWindow();
             void createContext();
             void run();
             void quit();
 
+            ID addLayer(Layer &l);
+            void removeLayer(ID id);
+            void activateLayer(ID id);
+
             private:
-            Window *m_window;
-            Context *m_context;
             std::string m_name;
             int m_x;
             int m_y;
@@ -55,6 +61,11 @@ namespace april
             Uint32 m_sdlFlags;
             Uint32 m_windowFlags;
             bool m_running;
+
+            Window *m_window;
+            Context *m_context;
+            std::vector<Layer> m_layers;
+            std::vector<Layer> m_activeLayers;
         };
     }  // namespace core
 }  // namespace winnebago

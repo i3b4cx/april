@@ -1,5 +1,6 @@
 #include "core/Application.h"
 #include "SDL_video.h"
+#include "core/Layer.h"
 
 namespace april
 {
@@ -7,8 +8,6 @@ namespace april
     {
         Application::Application()
             :
-                m_window(nullptr),
-                m_context(nullptr),
                 m_name(""),
                 m_x(0),
                 m_y(0),
@@ -16,7 +15,9 @@ namespace april
                 m_height(240),
                 m_sdlFlags(SDL_INIT_VIDEO),
                 m_windowFlags(SDL_WINDOW_OPENGL),
-                m_running(true)
+                m_running(true),
+                m_window(nullptr),
+                m_context(nullptr)
         {
             init();
         }
@@ -102,9 +103,13 @@ namespace april
                         break;
                 }
 
-                // HJP: update loop here
-
-                // HJP: render loop here
+                for (Layer &l : m_activeLayers)
+                {
+                    for (Scene &s : l.activeScenes())
+                    {
+                        s.update();
+                    }
+                }
 
                 SDL_GL_SwapWindow(m_window->window());
             }
@@ -116,6 +121,30 @@ namespace april
             delete m_context;
             delete m_window;
             SDL_Quit();
-        }   
+        }
+
+        ID Application::addLayer(Layer &l)
+        {
+            m_layers.push_back(l);
+            return l.id();
+        }
+
+        void Application::removeLayer(ID id)
+        {
+            for (auto it = m_layers.begin(); it != m_layers.end(); ++it)
+            {
+                if (it->id() == id)
+                    m_layers.erase(it);
+            }
+        }
+
+        void Application::activateLayer(ID id)
+        {
+            for (Layer &l : m_layers)
+            {
+                if (l.id() == id)
+                    m_activeLayers.push_back(l);
+            }
+        }
     }  // namespace core
 }  // namespace april

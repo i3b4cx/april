@@ -14,3 +14,23 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
+#ifndef __APRIL_SYSTEMS_RENDER_SYSTEM_H__
+#define __APRIL_SYSTEMS_RENDER_SYSTEM_H__
+
+#include "ecs/System.h"
+
+namespace april
+{
+    namespace systems
+    {
+        class RenderSystem : public ecs::System
+        {
+            RenderSystem();
+            ~RenderSystem();
+
+            void visit() override;
+        };
+    }  // namespace systems
+}  // namespace april
+
+#endif  // __APRIL_SYSTEMS_RENDER_SYSTEM_H__

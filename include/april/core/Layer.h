@@ -18,6 +18,7 @@ Date        | Author   | Description
 #define __APRIL_LAYER_H__
 
 #include <vector>
+#include "core/ID.h"
 #include "core/Scene.h"
 
 namespace april
@@ -27,18 +28,22 @@ namespace april
         class Layer
         {
             public:
-            Layer()
-            {}
+            Layer();
 
-            ~Layer()
-            {}
+            ~Layer();
+            
+            ID id();
+            ID addScene(Scene &s);
+            void removeScene(ID id);
+            void activateScene(ID id);
 
-            void addScene();
-            void destroyScene();
-            void processScenes();
+            std::vector<Scene> activeScenes();
 
             private:
-            std::vector<april::core::Scene> m_scenes;
+            static ID idIndex;
+            ID m_id;
+            std::vector<Scene> m_scenes;
+            std::vector<Scene> m_activeScenes;
         };
     }  // namespace core
 }  // namespace winnebago

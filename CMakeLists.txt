@@ -23,11 +23,13 @@ set(APRIL_SRC
     
     src/core/Application.cpp
     src/core/Context.cpp
+    src/core/ID.cpp
     src/core/Layer.cpp
     src/core/Registry.cpp
     src/core/Renderer.cpp
     src/core/Scene.cpp
     src/core/Window.cpp
+
     src/ecs/Component.cpp
     src/ecs/Entity.cpp
     src/ecs/System.cpp
@@ -119,6 +121,11 @@ add_executable(window
     samples/window/main.cpp)
 target_include_directories(window PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
 target_link_libraries(window april ${SDL2_LIBRARIES} )
+
+add_executable(layer
+    samples/layer/main.cpp)
+target_include_directories(layer PRIVATE ${APRIL_INC} PUBLIC ${SDL2_INCLUDE_DIRS})
+target_link_libraries(layer april ${SDL2_LIBRARIES} )
 
 # INSTALL LIBRARIES (OPTIONAL)
 
