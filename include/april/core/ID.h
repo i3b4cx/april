@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_ID_H__
-#define __APRIL_ID_H__
+#ifndef __APRIL_CORE_ID_H__
+#define __APRIL_CORE_ID_H__
 
 #include <cstdint>
 
@@ -27,4 +27,4 @@ namespace april
     }  // namespace core
 }  // namespace april
 
-#endif  // __APRIL_ID_H__
+#endif  // __APRIL_CORE_ID_H__

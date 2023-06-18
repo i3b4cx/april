@@ -28,9 +28,6 @@ namespace april
             public:
             Component();
             ~Component();
-
-            private:
-
         };
     }  // namespace ecs
 }  // namespace april

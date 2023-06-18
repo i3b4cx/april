@@ -84,13 +84,13 @@ namespace april
                 // this will tell us what kind of object we are dealing with.
                 switch(object.ecs())
                 {
-                    case ecs::Enums::Entity:
+                    case ecs::enums::ENTITY:
                         createEntity();
                         break;
-                    case ecs::Enums::Component:
+                    case ecs::enums::COMPONENT:
                         createComponent();
                         break;
-                    case ecs::Enums::System:
+                    case ecs::enums::SYSTEM:
                         createSystem();
                         break;
                     default:
@@ -154,9 +154,9 @@ namespace april
             ID m_entityId;
             ID m_componentId;
             ID m_systemId;
-            std::unordered_map<ID, ObjectPool<ecs::Component>> m_entities;
-            std::unordered_map<ID, ObjectPool<Object>> m_components;
-            std::unordered_map<ID, ObjectPool<Object>> m_systems;
+            std::unordered_map<ID, ObjectPool<ecs::Entity>> m_entities;
+            std::unordered_map<ID, ObjectPool<ecs::Component>> m_components;
+            std::unordered_map<ID, ObjectPool<ecs::System>> m_systems;
         };
     }  // namespace core
 }  // namespace winnebago

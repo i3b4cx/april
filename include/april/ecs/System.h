@@ -28,10 +28,6 @@ namespace april
             public:
             System();
             ~System();
-            virtual void visit();
-            
-            private:
-
         };
     }  // namespace ecs
 }  // namespace april

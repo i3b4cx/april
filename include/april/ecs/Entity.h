@@ -29,8 +29,6 @@ namespace april
             public:
             Entity();
             ~Entity();
-
-            private:
         };
     }  // namespace ecs
 }  // namespace april

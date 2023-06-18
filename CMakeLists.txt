@@ -48,6 +48,11 @@ set(APRIL_SRC
     src/network/Server.cpp
     src/network/Socket.cpp
 
+    src/parse/ColladaParser.cpp
+    src/parse/JSONParser.cpp
+    src/parse/XMLParser.cpp
+    src/parse/YAMLParser.cpp
+
     src/scenegraph/description/Camera.cpp
     src/scenegraph/description/DirectionalLight.cpp
     src/scenegraph/description/FlashLight.cpp

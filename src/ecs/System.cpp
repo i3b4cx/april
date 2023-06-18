@@ -4,9 +4,10 @@ namespace april
 {
     namespace ecs
     {
-        void System::visit()
-        {
+        System::System()
+        {}
 
-        }
+        System::~System()
+        {}
     }  // namespace ecs
 }  // namespace april
