@@ -98,6 +98,7 @@ namespace april
                 {
                     case SDL_QUIT:
                         quit();
+                        return;
                         break;
                     default:
                         break;
@@ -118,9 +119,9 @@ namespace april
         void Application::quit()
         {
             m_running = false;
+            SDL_Quit();
             delete m_context;
             delete m_window;
-            SDL_Quit();
         }
 
         ID Application::addLayer(Layer &l)
