@@ -3,12 +3,14 @@
 #include "core/Application.h"
 #include "core/Layer.h"
 #include "core/Scene.h"
+#include "systems/RenderSystem.h"
 
 int main()
 {
-    using Application = april::core::Application;
-    using Layer       = april::core::Layer;
-    using Scene       = april::core::Scene;
+    using Application  = april::core::Application;
+    using Layer        = april::core::Layer;
+    using Scene        = april::core::Scene;
+    using RenderSystem = april::systems::RenderSystem;
 
     try
     {
@@ -16,22 +18,14 @@ int main()
         app.createWindow();
         app.createContext();
 
-        Layer firstlayer;
-        std::cout << firstlayer.id();
-        Layer secondLayer;
-        std::cout << secondLayer.id();
-
+        Layer firstLayer;
         Scene firstScene;
-        std::cout << firstScene.id();
-        Scene secondScene;
-        std::cout << secondScene.id();
-        
-        firstlayer.addScene(firstScene);
-        secondLayer.addScene(secondScene);
+        firstScene.addSystem<RenderSystem>();
+        firstLayer.addScene(firstScene);
+        firstLayer.activateScene(firstScene.id());
+        app.addLayer(firstLayer);
+        app.activateLayer(firstLayer.id());
 
-        app.addLayer(firstlayer);
-        app.addLayer(secondLayer);
-        
         app.run();
     }
     catch (std::exception &e)

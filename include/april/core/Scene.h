@@ -21,6 +21,7 @@ Date        | Author   | Description
 #include "core/Registry.h"
 #include "core/Renderer.h"
 #include "ecs/System.h"
+#include <memory>
 
 namespace april
 {
@@ -34,12 +35,20 @@ namespace april
             ~Scene();
             
             ID id();
+            
+            template<typename T>
+            void addSystem()
+            {
+                std::shared_ptr<T> ptr = std::make_shared<T>();
+                m_systems.push_back(ptr);
+            }
+
             void update();
 
             private:
             static ID idIndex;
             ID m_id;
-            std::vector<ecs::System> m_systems;
+            std::vector<std::shared_ptr<ecs::System>> m_systems;
             april::core::Registry m_registry;
             april::core::Renderer m_renderer;
         };

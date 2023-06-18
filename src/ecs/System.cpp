@@ -4,16 +4,6 @@ namespace april
 {
     namespace ecs
     {
-        System::System()
-        {
-
-        }
-
-        System::~System()
-        {
-
-        }
-
         void System::visit()
         {
 

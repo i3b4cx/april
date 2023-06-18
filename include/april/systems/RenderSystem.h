@@ -25,10 +25,11 @@ namespace april
     {
         class RenderSystem : public ecs::System
         {
+            public:
             RenderSystem();
             ~RenderSystem();
 
-            void visit() override;
+            void visit();
         };
     }  // namespace systems
 }  // namespace april

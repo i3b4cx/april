@@ -24,9 +24,6 @@ namespace april
         class System
         {
             public:
-            System();
-            ~System();
-
             virtual void visit();
             
             private:
