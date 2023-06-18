@@ -4,7 +4,7 @@
  *   @file       include/april/ecs/Entity.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      ECS entity impl.
+ *   @brief      ECS enums impl.
  **/
 // ===============================================================================================
 /*
@@ -14,25 +14,20 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_ECS_ENTITY_H__
-#define __APRIL_ECS_ENTITY_H__
-
-#include "core/ID.h"
-#include "core/Object.h"
+#ifndef __APRIL_ECS_ENUMS_H__
+#define __APRIL_ECS_ENUMS_H__
 
 namespace april
 {
     namespace ecs
     {
-        class Entity : public core::Object
+        enum Enums
         {
-            public:
-            Entity();
-            ~Entity();
-
-            private:
+            Entity,
+            Component,
+            System
         };
     }  // namespace ecs
 }  // namespace april
 
-#endif  // __APRIL_ECS_ENTITY_H__
+#endif  // __APRIL_ECS_ENUMS_H__

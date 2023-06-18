@@ -1,10 +1,10 @@
 // ===============================================================================================
 /**
  *   @copyright  April - Copyright (c) 2023 Henry James Purdum
- *   @file       include/april/ecs/Entity.h
+ *   @file       include/april/util/Exception.h
  *   @author     Henry Purdum
  *   @date       06/16/2023
- *   @brief      ECS entity impl.
+ *   @brief      Utility for custom exception handling.
  **/
 // ===============================================================================================
 /*
@@ -14,25 +14,27 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_ECS_ENTITY_H__
-#define __APRIL_ECS_ENTITY_H__
+#ifndef __APRIL_UTIL_EXCEPTION_H__
+#define __APRIL_UTIL_EXCEPTION_H__
 
-#include "core/ID.h"
-#include "core/Object.h"
+#include <exception>
+#include <string>
 
 namespace april
 {
-    namespace ecs
+    namespace util
     {
-        class Entity : public core::Object
+        class Exception : public std::exception
         {
             public:
-            Entity();
-            ~Entity();
+            Exception(char *msg);
+
+            char *what();
 
             private:
+            char *m_msg;
         };
-    }  // namespace ecs
+    }  // namespace util
 }  // namespace april
 
-#endif  // __APRIL_ECS_ENTITY_H__
+#endif  // __APRIL_UTIL_EXCEPTION_H__

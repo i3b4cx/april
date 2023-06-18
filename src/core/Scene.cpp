@@ -29,10 +29,7 @@ namespace april
 
         void Scene::update()
         {
-            for (std::shared_ptr<ecs::System> s : m_systems)
-            {
-                s->visit();
-            }
+            m_registry.update();
         }
     }  // namespace core
 }  // namespace april

@@ -25,6 +25,8 @@ set(APRIL_SRC
     src/core/Context.cpp
     src/core/ID.cpp
     src/core/Layer.cpp
+    src/core/Object.cpp
+    src/core/ObjectPool.cpp
     src/core/Registry.cpp
     src/core/Renderer.cpp
     src/core/Scene.cpp
@@ -32,6 +34,7 @@ set(APRIL_SRC
 
     src/ecs/Component.cpp
     src/ecs/Entity.cpp
+    src/ecs/Enums.cpp
     src/ecs/System.cpp
 
     src/graphics/api/gl2.cpp
@@ -76,6 +79,11 @@ set(APRIL_SRC
     src/systems/InputSystem.cpp
     src/systems/MessageSystem.cpp
     src/systems/RenderSystem.cpp
+
+    src/util/ArgParser.cpp
+    src/util/Exception.cpp
+    src/util/Logger.cpp
+    src/util/Profiler.cpp
     )
 set(test_src
     )

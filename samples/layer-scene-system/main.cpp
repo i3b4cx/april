@@ -10,7 +10,6 @@ int main()
     using Application  = april::core::Application;
     using Layer        = april::core::Layer;
     using Scene        = april::core::Scene;
-    using RenderSystem = april::systems::RenderSystem;
 
     try
     {
@@ -20,7 +19,6 @@ int main()
 
         Layer firstLayer;
         Scene firstScene;
-        firstScene.addSystem<RenderSystem>();
         firstLayer.addScene(firstScene);
         firstLayer.activateScene(firstScene.id());
         app.addLayer(firstLayer);

@@ -17,11 +17,13 @@ Date        | Author   | Description
 #ifndef __APRIL_ECS_COMPONENT_H__
 #define __APRIL_ECS_COMPONENT_H__
 
+#include "core/Object.h"
+
 namespace april
 {
     namespace ecs
     {
-        class Component
+        class Component : public core::Object
         {
             public:
             Component();

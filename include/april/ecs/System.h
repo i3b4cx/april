@@ -17,11 +17,13 @@ Date        | Author   | Description
 #ifndef __APRIL_ECS_SYSTEM_H__
 #define __APRIL_ECS_SYSTEM_H__
 
+#include "core/Object.h"
+
 namespace april
 {
     namespace ecs
     {
-        class System
+        class System : public core::Object
         {
             public:
             virtual void visit();

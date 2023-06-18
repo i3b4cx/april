@@ -1,12 +1,9 @@
-#include "core/Registry.h"
+#include "core/ObjectPool.h"
 
 namespace april
 {
     namespace core
     {
-        void Registry::update()
-        {
 
-        }
     }  // namespace core
 }  // namespace april

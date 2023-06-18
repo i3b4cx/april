@@ -36,19 +36,11 @@ namespace april
             
             ID id();
             
-            template<typename T>
-            void addSystem()
-            {
-                std::shared_ptr<T> ptr = std::make_shared<T>();
-                m_systems.push_back(ptr);
-            }
-
             void update();
 
             private:
             static ID idIndex;
             ID m_id;
-            std::vector<std::shared_ptr<ecs::System>> m_systems;
             april::core::Registry m_registry;
             april::core::Renderer m_renderer;
         };
