@@ -154,8 +154,7 @@ namespace april
             ID m_entityId;
             ID m_componentId;
             ID m_systemId;
-            ecs::Entity e;
-            std::unordered_map<ID, ObjectPool<ecs::Entity>> m_entities;
+            std::unordered_map<ID, ObjectPool<ecs::Component>> m_entities;
             std::unordered_map<ID, ObjectPool<Object>> m_components;
             std::unordered_map<ID, ObjectPool<Object>> m_systems;
         };

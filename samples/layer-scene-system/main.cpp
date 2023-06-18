@@ -3,6 +3,8 @@
 #include "core/Application.h"
 #include "core/Layer.h"
 #include "core/Scene.h"
+#include "ecs/Component.h"
+#include "ecs/Enums.h"
 #include "systems/RenderSystem.h"
 
 int main()
@@ -23,6 +25,8 @@ int main()
         firstLayer.activateScene(firstScene.id());
         app.addLayer(firstLayer);
         app.activateLayer(firstLayer.id());
+
+        april::ecs::Component c;
 
         app.run();
     }
