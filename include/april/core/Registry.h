@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_REGISTRY_H__
-#define __APRIL_REGISTRY_H__
+#ifndef __APRIL_CORE_REGISTRY_H__
+#define __APRIL_CORE_REGISTRY_H__
 
 #include "core/ID.h"
 #include "core/Object.h"
@@ -161,4 +161,4 @@ namespace april
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __APRIL_REGISTRY_H__
+#endif  // __APRIL_CORE_REGISTRY_H__

@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_SCENE_H__
-#define __APRIL_SCENE_H__
+#ifndef __APRIL_CORE_SCENE_H__
+#define __APRIL_CORE_SCENE_H__
 
 #include "core/ID.h"
 #include "core/Registry.h"
@@ -47,4 +47,4 @@ namespace april
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __APRIL_SCENE_H__
+#endif  // __APRIL_CORE_SCENE_H__

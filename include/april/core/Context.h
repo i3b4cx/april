@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_CONTEXT_H__
-#define __APRIL_CONTEXT_H__
+#ifndef __APRIL_CORE_CONTEXT_H__
+#define __APRIL_CORE_CONTEXT_H__
 
 #include <SDL2/SDL.h>
 #include "core/Window.h"
@@ -37,4 +37,4 @@ namespace april
     }  // namespace core
 }  // namespace april
 
-#endif  // __APRIL_CONTEXT_H__
+#endif  // __APRIL_CORE_CONTEXT_H__

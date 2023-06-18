@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_LAYER_H__
-#define __APRIL_LAYER_H__
+#ifndef __APRIL_CORE_LAYER_H__
+#define __APRIL_CORE_LAYER_H__
 
 #include <vector>
 #include "core/ID.h"
@@ -48,4 +48,4 @@ namespace april
     }  // namespace core
 }  // namespace winnebago
 
-#endif  // __APRIL_LAYER_H__
+#endif  // __APRIL_CORE_LAYER_H__

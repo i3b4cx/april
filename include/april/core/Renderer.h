@@ -14,8 +14,8 @@ Date        | Author   | Description
 06/16/2023  | HJP      | Initial Implementation
 ---------------------------------------------------------------------------------------------------
  */
-#ifndef __APRIL_RENDERER_H__
-#define __APRIL_RENDERER_H__
+#ifndef __APRIL_CORE_RENDERER_H__
+#define __APRIL_CORE_RENDERER_H__
 
 #include "graphics/RenderStrategy.h"
 #include "graphics/RenderImpl.h"
@@ -42,4 +42,4 @@ namespace april
     }  // namespace core
 }  // namespace april
 
-#endif  // __APRIL_RENDERER_H__
+#endif  // __APRIL_CORE_RENDERER_H__
