@@ -1,6 +1,7 @@
 #include "ecs/Entity.h"
 #include "core/ID.h"
 #include "ecs/Enums.h"
+#include <iostream>
 
 namespace april
 {
@@ -15,6 +16,11 @@ namespace april
         }
 
         Entity::~Entity()
+        {
+            entityId--;
+        }
+
+        void Entity::update()
         {
 
         }

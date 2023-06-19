@@ -1,16 +1,17 @@
 #include "core/Object.h"
 #include "ecs/Enums.h"
+#include <iostream>
 
 namespace april
 {
     namespace core
     {
-        ID Object::idIndex = 0;
+        ID Object::objectId = 0;
 
         Object::Object()
             :
+                m_id(objectId++),
                 m_alive(false),
-                m_id(idIndex++),
                 m_type(ecs::enums::Enums::OBJECT)
         {
             
@@ -18,7 +19,7 @@ namespace april
 
         Object::~Object()
         {
-
+            objectId--;
         }
 
         void Object::init()
@@ -44,6 +45,11 @@ namespace april
         ecs::enums::Enums Object::ecs()
         {
             return m_type;
+        }
+
+        void Object::update()
+        {
+
         }
     }  // namespace core
 }  // namespace april

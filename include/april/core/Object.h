@@ -35,12 +35,12 @@ namespace april
             void kill();
             ecs::enums::Enums ecs();
 
-            private:
-            static ID idIndex;
-            bool m_alive;
+            virtual void update();
 
             protected:
+            static ID objectId;
             ID m_id;
+            bool m_alive;
             ecs::enums::Enums m_type;
         };
     }  // namespace core

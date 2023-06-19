@@ -19,7 +19,6 @@ Date        | Author   | Description
 
 #include "core/ID.h"
 #include "core/Object.h"
-#include "ecs/Enums.h"
 
 namespace april
 {
@@ -30,6 +29,8 @@ namespace april
             public:
             Component();
             ~Component();
+
+            void update() override;
 
             private:
             static core::ID componentId;

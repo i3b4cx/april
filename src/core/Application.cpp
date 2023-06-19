@@ -1,6 +1,10 @@
 #include "core/Application.h"
 #include "SDL_video.h"
 #include "core/Layer.h"
+#include "core/Registry.h"
+#include "ecs/Entity.h"
+#include "ecs/System.h"
+#include "util/Exception.h"
 
 namespace april
 {

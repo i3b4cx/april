@@ -30,6 +30,8 @@ namespace april
             Entity();
             ~Entity();
 
+            void update() override;
+
             private:
             static core::ID entityId;
         };

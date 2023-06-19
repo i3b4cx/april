@@ -2,6 +2,7 @@
 #include "core/ID.h"
 #include "core/Object.h"
 #include "ecs/Enums.h"
+#include <iostream>
 
 namespace april
 {
@@ -17,8 +18,12 @@ namespace april
 
         Component::~Component()
         {
+            componentId--;
+        }
+        
+        void Component::update()
+        {
 
         }
-
     }  // namespace ecs
 }  // namespace april

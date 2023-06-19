@@ -48,9 +48,6 @@ namespace april
 
             }
 
-            void update();
-            
-            // HJP: going to need to add on ObjectID type for readability.
             template<typename T>
             static ID add(Registry &reg)
             {
@@ -64,15 +61,21 @@ namespace april
             }
 
             template<typename T>
-            static void getOrInsert(int id, Registry &reg)
+            static T &find(int id, Registry &reg)
             {
-                reg.getOrInsert<T>(id);
+                return reg.find<T>(id);
             }
 
             template<typename T>
-            static void find(int id, Registry &reg)
+            static void findOrInsert(int id, Registry &reg)
             {
-                reg.find<T>(id);
+                reg.findOrInsert<T>(id);
+            }
+
+            template<typename T>
+            static void update(Registry &reg)
+            {
+                reg.update<T>();
             }
 
             private:
@@ -84,7 +87,7 @@ namespace april
                 // typed objects will inheirit from one of the ecs classes and will all implement this ecs() function
                 // this will tell us what kind of object we are dealing with.
                 T object;
-                switch(object.ecs())
+                switch (object.ecs())
                 {
                     case ecs::enums::ENTITY:
                         return m_entities.create();
@@ -107,16 +110,16 @@ namespace april
             {
                 // HJP: remove for components and object derivative types in our scene.
                 T object;
-                switch(object.ecs())
+                switch (object.ecs())
                 {
                     case ecs::enums::ENTITY:
-                        m_entities.remove(id);
+                        m_entities.destroy(id);
                         break;
                     case ecs::enums::COMPONENT:
-                        m_components.remove(id);
+                        m_components.destroy(id);
                         break;
                     case ecs::enums::SYSTEM:
-                        m_systems.remove(id);
+                        m_systems.destroy(id);
                         break;
                     default:
                         char *msg = (char *)"ERROR: tried to remove template object with invalid ecs enum.";
@@ -125,52 +128,57 @@ namespace april
             }
 
             template<typename T>
-            void getOrInsert(int id)
+            T &find(int id)
             {
-                // HJP: scene based lookup with an add builtin.
+                // HJP: scene based lookup.
+                T object;
+                switch (object.ecs())
+                {
+                    case ecs::enums::ENTITY:
+                        return m_entities.find(id);
+                        break;
+                    case ecs::enums::COMPONENT:
+                        return m_components.find(id);
+                        break;
+                    case ecs::enums::SYSTEM:
+                        return m_systems.find(id);
+                        break;
+                    default:
+                        char *msg = (char *)"ERROR: tried to find template object with invalid ecs enum.";
+                        throw util::Exception(msg);
+                }
             }
 
             template<typename T>
-            void find(int id)
+            T &findOrInsert(int id)
             {
-                // HJP: scene based lookup.
+                // HJP: scene based lookup with an add builtin.
+                T object;
+                switch (object.ecs())
+                {
+                    case ecs::enums::ENTITY:
+                        return m_entities.findOrInsert(id);
+                        break;
+                    case ecs::enums::COMPONENT:
+                        return m_components.findOrInsert(id);
+                        break;
+                    case ecs::enums::SYSTEM:
+                        return m_systems.findOrInsert(id);
+                        break;
+                    default:
+                        char *msg = (char *)"ERROR: tried to findOrInsert template object with invalid ecs enum.";
+                        throw util::Exception(msg);
+                }
             }
 
-            void createEntity()
+            template<typename T>
+            void update()
             {
-                // HJP: create an entity in our scene.
-                //m_entities[m_entityId++].create();
-            }
-
-            void destroyEntity(ID entityID)
-            {
-                // HJP: destroy an entity in our scene.
-            }
-
-            void createComponent()
-            {
-                // HJP: create an entity in our scene.
-                //m_components[m_componentId++].create();
-            }
-
-            void destroyComponent()
-            {
-                // HJP: destroy an entity in our scene.
-            }
-
-            void createSystem()
-            {
-                // HJP: create an entity in our scene.
-                //m_systems[m_systemId++].create();
-            }
-
-            void destroySystem()
-            {
-                // HJP: destroy an entity in our scene.
+                T object;
+                object.update();
             }
 
             private:
-            // map: asset reference id -> asset object pools
             ObjectPool<ecs::Entity> m_entities;
             ObjectPool<ecs::Component> m_components;
             ObjectPool<ecs::System> m_systems;

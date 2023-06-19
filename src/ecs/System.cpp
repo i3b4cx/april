@@ -16,6 +16,11 @@ namespace april
 
         System::~System()
         {
+            systemId--;
+        }
+
+        void System::update()
+        {
 
         }
     }  // namespace ecs

@@ -30,6 +30,8 @@ namespace april
             System();
             ~System();
 
+            void update() override;
+
             private:
             static core::ID systemId;
         };

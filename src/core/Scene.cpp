@@ -34,7 +34,9 @@ namespace april
 
         void Scene::update()
         {
-            m_registry.update();
+            Registry::update<ecs::Entity>(m_registry);
+            Registry::update<ecs::Component>(m_registry);
+            Registry::update<ecs::System>(m_registry);
         }
     }  // namespace core
 }  // namespace april

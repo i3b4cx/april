@@ -18,6 +18,7 @@ Date        | Author   | Description
 #define __APRIL_CORE_OBJECT_POOL_H__
 
 #include "core/ID.h"
+#include "util/Exception.h"
 #include <array>
 #include <memory>
 
@@ -42,18 +43,6 @@ namespace april
 
             }
 
-            static std::shared_ptr<ObjectPool<T>> instance()
-            {
-                if (m_instance  == nullptr)
-                    m_instance = std::make_shared<ObjectPool<T>()>();
-                return m_instance;
-            }
-
-            std::array<T, POOL_SIZE> assets()
-            {
-                return m_assets;
-            }
-
             template<typename ...Args>
             ID create(Args &&...args)
             {
@@ -65,24 +54,50 @@ namespace april
                         return asset.id();
                     }
                 }
-                return -1;
+                char *msg = (char *)"ERROR: tried to create new object, but pool was full.";
+                throw util::Exception(msg);
             }
 
-            void remove(ID id)
+            void destroy(ID id)
             {
-                for (int i = 0; i < POOL_SIZE; i++)
+                for (T &asset : m_assets)
                 {
-                    if (m_assets[i].id() == id)
+                    if (asset.id() == id)
                     {
-                        m_assets[i].kill();
+                        asset.kill();
                         return;
                     }
                 }
             }
 
+            T &find(ID id)
+            {
+               for (T &asset : m_assets)
+                {
+                    if (asset.id() == id)
+                    {
+                        return asset;
+                    }
+                }
+               char *msg = (char *)"ERROR: tried to find new object, but pool was full.";
+               throw util::Exception(msg);
+            }
+
+            T &findOrInsert(ID id)
+            {
+               for (T &asset : m_assets)
+                {
+                    if (asset.id() == id)
+                    {
+                        return asset;
+                    }
+                }
+               T object;
+               return object;
+            }
+
             private:
             std::array<T, POOL_SIZE> m_assets;
-            static std::shared_ptr<ObjectPool<T>> m_instance;
         };
     }  // namespace core
 }  // namespace april

@@ -33,10 +33,9 @@ namespace april
             Scene();
 
             ~Scene();
-            
+
             ID id();
             Registry &registry();
-            
             void update();
 
             private:
