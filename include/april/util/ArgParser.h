@@ -23,6 +23,7 @@ namespace april
     {
         class ArgParser
         {
+
         };
     }  // namespace util
 }  // namespace april
