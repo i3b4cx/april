@@ -44,6 +44,11 @@ namespace april
             } 
         }
 
+        Logger::~Logger()
+        {
+            m_fs.close();
+        }
+
         std::ostream& Logger::get()
         {
             if (m_type == DEBUG || m_type == FATAL)

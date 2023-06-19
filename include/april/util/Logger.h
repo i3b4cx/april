@@ -36,6 +36,7 @@ namespace april
             public:
             Logger(LogType type);
             Logger(LogType type, std::string filepath);
+            ~Logger();
 
             std::ostream& get();
 
