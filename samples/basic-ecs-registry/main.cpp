@@ -18,6 +18,7 @@ int main()
     try
     {
         Application app;
+        app.fpsCounter(true);
         app.createWindow();
         app.createContext();
         Layer firstLayer;

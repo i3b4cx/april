@@ -23,6 +23,7 @@ Date        | Author   | Description
 #include "core/Window.h"
 #include "core/Context.h"
 #include "core/ID.h"
+#include "util/Logger.h"
 #include <vector>
 
 namespace april
@@ -41,6 +42,7 @@ namespace april
             const Application &height(int height);
             const Application &sdlFlags(Uint32 flags);
             const Application &windowFlags(Uint32 flags);
+            const Application &fpsCounter(bool on);
 
             void init();
             void createWindow();
@@ -60,12 +62,14 @@ namespace april
             int m_height;
             Uint32 m_sdlFlags;
             Uint32 m_windowFlags;
+            bool m_fps;
             bool m_running;
 
             Window *m_window;
             Context *m_context;
             std::vector<Layer> m_layers;
             std::vector<Layer> m_activeLayers;
+            util::Logger m_logger;
         };
     }  // namespace core
 }  // namespace winnebago

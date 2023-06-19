@@ -5,6 +5,8 @@
 #include "ecs/Entity.h"
 #include "ecs/System.h"
 #include "util/Exception.h"
+#include "util/Logger.h"
+#include <chrono>
 
 namespace april
 {
@@ -19,9 +21,11 @@ namespace april
                 m_height(240),
                 m_sdlFlags(SDL_INIT_VIDEO),
                 m_windowFlags(SDL_WINDOW_OPENGL),
+                m_fps(false),
                 m_running(true),
                 m_window(nullptr),
-                m_context(nullptr)
+                m_context(nullptr),
+                m_logger(util::DEBUG)
         {
             init();
         }
@@ -72,6 +76,12 @@ namespace april
             m_windowFlags = flags;
             return *this;
         }
+
+        const Application &Application::fpsCounter(bool on)
+        {
+            m_fps = on;
+            return *this;
+        }
         
         void Application::init()
         {
@@ -112,7 +122,17 @@ namespace april
                 {
                     for (Scene &s : l.activeScenes())
                     {
+                        std::chrono::steady_clock::time_point startTime, finishTime;
+                        if (m_fps)
+                            startTime = std::chrono::steady_clock::now();
                         s.update();
+                        if (m_fps)
+                        {
+                            finishTime = std::chrono::steady_clock::now();
+                            float dt = static_cast<float>(std::chrono::duration_cast<std::chrono::nanoseconds>(finishTime - startTime).count());
+                            dt /= 1000000000;
+                            m_logger.get() << "[DEBUG] " << 1/dt << " fps." << std::endl;
+                        }
                     }
                 }
 
